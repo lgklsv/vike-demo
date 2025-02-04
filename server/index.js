@@ -5,11 +5,7 @@ import vike from 'vike-node/hono';
 startServer();
 function startServer() {
   const app = new Hono().basePath('/app');
-  app.use(
-    vike({
-      static: './dist/client',
-    }),
-  );
+  app.use(vike());
   const port = 3000;
   serve(
     {
